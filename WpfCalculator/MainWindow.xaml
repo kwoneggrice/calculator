@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCalculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="550" Width="450">
+        Title="Calculator" Height="500" Width="450">
     <StackPanel>
         <TextBlock TextAlignment="Center" FontSize="30" FontWeight="Bold" Margin="5,30,5,30">Calculator</TextBlock>
         <TextBlock x:Name="InputDataBlock" Margin="5,5,5,5"></TextBlock>
