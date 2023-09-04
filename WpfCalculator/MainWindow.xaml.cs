@@ -62,6 +62,10 @@ namespace WpfCalculator
 				Input.Text = "0";
 				isClear = true;
 			}
+			else if (Display.Text != "")
+			{
+				Display.Text = "";
+			}
 			else
 			{
 				Input.Text = Input.Text.Substring(0, Input.Text.Length - 1);
@@ -71,7 +75,15 @@ namespace WpfCalculator
 		private void Divide_Btn_Click(object sender, RoutedEventArgs e)
 		{
 			inputNumber[0] = double.Parse(Input.Text);
-			Display.Text = (Input.Text + "÷");
+			if (Input.Text[Input.Text.Length - 1] == '.')
+			{
+				Display.Text = Input.Text + "0" + "÷";
+			}
+			else
+			{
+				Display.Text = (Input.Text + "÷");
+
+			}
 			op = '/';
 			Input.Text = "";
 		}
@@ -79,7 +91,15 @@ namespace WpfCalculator
 		private void Multiply_Btn_Click(object sender, RoutedEventArgs e)
 		{
 			inputNumber[0] = double.Parse(Input.Text);
-			Display.Text = (Input.Text + "×");
+			if (Input.Text[Input.Text.Length - 1] == '.')
+			{
+				Display.Text = Input.Text + "0" + "×";
+			}
+			else
+			{
+				Display.Text = (Input.Text + "×");
+
+			}
 			op = '*';
 			Input.Text = "";
 		}
@@ -87,7 +107,15 @@ namespace WpfCalculator
 		private void Subtract_Btn_Click(object sender, RoutedEventArgs e)
 		{
 			inputNumber[0] = double.Parse(Input.Text);
-			Display.Text = (Input.Text + "−");
+			if (Input.Text[Input.Text.Length - 1] == '.')
+			{
+				Display.Text = Input.Text + "0" + "−";
+			}
+			else
+			{
+				Display.Text = (Input.Text + "−");
+
+			}
 			op = '-';
 			Input.Text = "";
 		}
@@ -95,14 +123,29 @@ namespace WpfCalculator
 		private void Plus_Btn_Click(object sender, RoutedEventArgs e)
 		{
 			inputNumber[0] = double.Parse(Input.Text);
-			Display.Text = (Input.Text + "+");
+			if (Input.Text[Input.Text.Length - 1] == '.')
+			{
+				Display.Text = Input.Text + "0" + "+";
+			}
+			else
+			{
+				Display.Text = (Input.Text + "+");
+
+			}
 			op = '+';
 			Input.Text = "";
 		}
 
 		private void Dot_Btn_Click(object sender, RoutedEventArgs e)
 		{
-
+			if (Input.Text.Contains("."))
+			{
+				return;
+			}
+			else
+			{
+				Input.Text += ".";
+			}
 		}
 
 		private void Result_Btn_Click(object sender, RoutedEventArgs e)
@@ -111,28 +154,60 @@ namespace WpfCalculator
 			{
 				inputNumber[1] = double.Parse(Input.Text);
 				result = inputNumber[0] + inputNumber[1];
-				Display.Text += (Input.Text + "=");
+				if (Input.Text[Input.Text.Length - 1] == '.')
+				{
+					Display.Text += Input.Text + "0" + "=";
+				}
+				else
+				{
+					Display.Text += (Input.Text + "=");
+
+				}
 				Input.Text = result.ToString();
 			}
 			else if (op == '-')
 			{
 				inputNumber[1] = double.Parse(Input.Text);
 				result = inputNumber[0] - inputNumber[1];
-				Display.Text += (Input.Text + "=");
+				if (Input.Text[Input.Text.Length - 1] == '.')
+				{
+					Display.Text += Input.Text + "0" + "=";
+				}
+				else
+				{
+					Display.Text += (Input.Text + "=");
+
+				}
 				Input.Text = result.ToString();
 			}
 			else if (op == '*')
 			{
 				inputNumber[1] = double.Parse(Input.Text);
 				result = inputNumber[0] * inputNumber[1];
-				Display.Text += (Input.Text + "=");
+				if (Input.Text[Input.Text.Length - 1] == '.')
+				{
+					Display.Text += Input.Text + "0" + "=";
+				}
+				else
+				{
+					Display.Text += (Input.Text + "=");
+
+				}
 				Input.Text = result.ToString();
 			}
 			else
 			{
 				inputNumber[1] = double.Parse(Input.Text);
 				result = inputNumber[0] / inputNumber[1];
-				Display.Text += (Input.Text + "=");
+				if (Input.Text[Input.Text.Length - 1] == '.')
+				{
+					Display.Text += Input.Text + "0" + "=";
+				}
+				else
+				{
+					Display.Text += (Input.Text + "=");
+
+				}
 				Input.Text = result.ToString();
 			}
 		}
