@@ -8,8 +8,8 @@
         Title="Calculator" Height="520" Width="450">
     <StackPanel>
         <TextBlock TextAlignment="Center" FontSize="30" FontWeight="Bold" Margin="5,30,5,30">Calculator</TextBlock>
-        <TextBlock x:Name="InputDataBlock" Margin="5,5,5,5"></TextBlock>
-        <TextBox x:Name="InputNumberBox" BorderThickness="0" Height="50" Margin="5,5,5,5"></TextBox>
+        <TextBlock x:Name="Display" TextAlignment="Right" Margin="5,5,5,5"></TextBlock>
+        <TextBox x:Name="Input" TextAlignment="Right" FontSize="30" FontWeight="Bold" BorderThickness="0" Height="50" Margin="5,5,5,5">0</TextBox>
         <Grid Margin="5,5,5,5">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -25,26 +25,26 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0" FontSize="40">CE</Button>
-            <Button Grid.Row="0" Grid.Column="1" FontSize="40">C</Button>
-            <Button Grid.Row="0" Grid.Column="2" FontSize="40">←</Button>
-            <Button Grid.Row="0" Grid.Column="3" FontSize="40">÷</Button>
-            <Button Grid.Row="1" Grid.Column="0" FontSize="40">7</Button>
-            <Button Grid.Row="1" Grid.Column="1" FontSize="40">8</Button>
-            <Button Grid.Row="1" Grid.Column="2" FontSize="40">9</Button>
-            <Button Grid.Row="1" Grid.Column="3" FontSize="40">×</Button>
-            <Button Grid.Row="2" Grid.Column="0" FontSize="40">4</Button>
-            <Button Grid.Row="2" Grid.Column="1" FontSize="40">5</Button>
-            <Button Grid.Row="2" Grid.Column="2" FontSize="40">6</Button>
-            <Button Grid.Row="2" Grid.Column="3" FontSize="40">−</Button>
-            <Button Grid.Row="3" Grid.Column="0" FontSize="40">1</Button>
-            <Button Grid.Row="3" Grid.Column="1" FontSize="40">2</Button>
-            <Button Grid.Row="3" Grid.Column="2" FontSize="40">3</Button>
-            <Button Grid.Row="3" Grid.Column="3" FontSize="40">+</Button>
+            <Button Grid.Row="0" Grid.Column="0" FontSize="40"></Button>
+            <Button x:Name="C_Btn" Grid.Row="0" Grid.Column="1" FontSize="40" Click="C_Btn_Click">C</Button>
+            <Button x:Name="Delete_Btn" Grid.Row="0" Grid.Column="2" FontSize="40" Click="Delete_Btn_Click">←</Button>
+            <Button x:Name="Divide_Btn" Grid.Row="0" Grid.Column="3" FontSize="40" Click="Divide_Btn_Click">÷</Button>
+            <Button Grid.Row="1" Grid.Column="0" FontSize="40" Click="Number_Btn_Click">7</Button>
+            <Button Grid.Row="1" Grid.Column="1" FontSize="40" Click="Number_Btn_Click">8</Button>
+            <Button Grid.Row="1" Grid.Column="2" FontSize="40" Click="Number_Btn_Click">9</Button>
+            <Button x:Name="Multiply_Btn" Grid.Row="1" Grid.Column="3" FontSize="40" Click="Multiply_Btn_Click">×</Button>
+            <Button Grid.Row="2" Grid.Column="0" FontSize="40" Click="Number_Btn_Click">4</Button>
+            <Button Grid.Row="2" Grid.Column="1" FontSize="40" Click="Number_Btn_Click">5</Button>
+            <Button Grid.Row="2" Grid.Column="2" FontSize="40" Click="Number_Btn_Click">6</Button>
+            <Button x:Name="Subtract_Btn" Grid.Row="2" Grid.Column="3" FontSize="40" Click="Subtract_Btn_Click">−</Button>
+            <Button Grid.Row="3" Grid.Column="0" FontSize="40" Click="Number_Btn_Click">1</Button>
+            <Button Grid.Row="3" Grid.Column="1" FontSize="40" Click="Number_Btn_Click">2</Button>
+            <Button Grid.Row="3" Grid.Column="2" FontSize="40" Click="Number_Btn_Click">3</Button>
+            <Button x:Name="Plus_Btn" Grid.Row="3" Grid.Column="3" FontSize="40" Click="Plus_Btn_Click">+</Button>
             <Button Grid.Row="4" Grid.Column="0" FontSize="40"></Button>
-            <Button Grid.Row="4" Grid.Column="1" FontSize="40">0</Button>
-            <Button Grid.Row="4" Grid.Column="2" FontSize="40">.</Button>
-            <Button Grid.Row="4" Grid.Column="3" FontSize="40">=</Button>
+            <Button Grid.Row="4" Grid.Column="1" FontSize="40" Click="Number_Btn_Click">0</Button>
+            <Button x:Name="Dot_Btn" Grid.Row="4" Grid.Column="2" FontSize="40" Click="Dot_Btn_Click">.</Button>
+            <Button x:Name="Result_Btn" Grid.Row="4" Grid.Column="3" FontSize="40" Click="Result_Btn_Click">=</Button>
         </Grid>
     </StackPanel>
 </Window>
