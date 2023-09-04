@@ -57,6 +57,15 @@ namespace WpfCalculator
 
 		private void Delete_Btn_Click(object sender, RoutedEventArgs e)
 		{
+			if (Input.Text.Length == 1)
+			{
+				Input.Text = "0";
+				isClear = true;
+			}
+			else
+			{
+				Input.Text = Input.Text.Substring(0, Input.Text.Length - 1);
+			}
 		}
 
 		private void Divide_Btn_Click(object sender, RoutedEventArgs e)
